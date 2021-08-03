@@ -9,7 +9,7 @@
 .game-info {
     grid-area: info;
 }
-.game {
+#board {
     grid-area: game;
     display: flex;
     flex-wrap: wrap;
@@ -21,7 +21,7 @@
 
 
 
-.box {
+.cell {
     border: 1px solid black;
     width: 160px;
     height: 160px;
