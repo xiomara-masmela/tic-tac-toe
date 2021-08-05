@@ -6,14 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
+    <!--Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <main class="container">
         
         <section class="game-info">
             <h1>Let's play Tic Tac Toe</h1>
+            <h4>Players</h4>
+            <p>Choose your Player name (max 3 characters)</p>
+            <div class="players">
+                <input id="p1" type="text" placeholder="Player name 1" maxlength="3">
+                <input id="p2" type="text" placeholder="Player name 2" maxlength="3">
+                <button onclick="newNames()">Start Game</button>
+            </div>
             
-            <button id="reset">Reset Game</button>
                 
             </ul>
         </section>
@@ -30,7 +40,8 @@
         </section>
         <section class="status">
             <h4>Game Status</h4>
-            <p id="player"></p>
+            <p id="player" class="player-info"></p>
+            <button id="reset" class="invisible">Reset Game</button>
         </section>
        
 

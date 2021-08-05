@@ -1,28 +1,172 @@
+body {
+    background-color: #102532;
+    color: #a9b1b6;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .container {
     display: grid;
-    grid-template-areas: 
-    "info game results"
-    "info game results"
-    "info game results";
+    grid-template-areas:
+        "info game results"
+        "info game results"
+        "info game results";
     padding: 80px 60px;
+
 }
+
 .game-info {
     grid-area: info;
+    padding: 30px 50px 30px 0;
+    width: 450px;
 }
+
 #board {
     grid-area: game;
     display: flex;
     flex-wrap: wrap;
-    max-width: 500px;
+    max-width: 700px;
+    width: 525px;
+    align-items: center;
+    justify-content: space-between;
 }
-.results {
+
+.status {
     grid-area: results;
+    width: 200px;
+    padding: 30px;
 }
 
 
 
 .cell {
-    border: 1px solid black;
+    background-color: rgb(54, 74, 86);
     width: 160px;
-    height: 160px;
+    height: 152px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(54, 74, 86);
+    font-size: 50px;
+    font-weight: bold;
+    transition: background-color 1s ease;
+    cursor: pointer;
+}
+
+.clickedP1 {
+    background-color: rgb(255, 121, 113);
+}
+
+.clickedP2 {
+    background-color: rgb(132, 200, 203);
+}
+
+.winner {
+    background-color: red;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 100;
+}
+
+h4 {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.players {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+}
+
+input {
+    background-color: rgb(54, 74, 86);
+    color: #a9b1b6;
+    opacity: 0.8;
+    border: 0;
+    border-radius: 4px;
+    width: 40%;
+    padding: 20px 10px;
+    margin-right: 20px;
+    font-size: 16px;
+
+}
+
+input::placeholder {
+    color: #a9b1b6;
+}
+
+button {
+    border: 1px solid #a9b1b6;
+    background-color: transparent;
+    color: #a9b1b6;
+    border-radius: 32px;
+    padding: 15px 26px;
+    margin-top: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.2s transform ease-in-out;
+    will-change: transform;
+    z-index: 0;
+}
+
+button::after {
+    background-color: #a9b1b6;
+    color: #102532;
+    border-radius: 3rem;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 0) rotate(10deg);
+    transform-origin: top left;
+    transition: .5s transform ease-out;
+    will-change: transform;
+    z-index: -1;
+    transition: visibility 0.5s;
+
+
+}
+button:hover {
+    border: 2px solid transparent;
+    color: #102532;
+    transform: scale(1.05);
+    will-change: transform;
+}
+button:hover::after {
+    transform: translate(0, 0);
+}
+
+
+.player-info {
+    font-size: 25px;
+    transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
+}
+
+.winner-P1 {
+    color: rgb(255, 121, 113);
+    font-size: 35px;
+    text-transform: capitalize;
+    font-weight: 900;
+}
+
+.winner-P2 {
+    color: rgb(132, 200, 203);
+    font-size: 35px;
+    text-transform: capitalize;
+    font-weight: 900;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
 }
