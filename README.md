@@ -3,6 +3,8 @@
 
 The project uses HTML, CSS and JavaScript.
 
+![Tic Tac Toe screenshot](./screenshot.png "Tic Tac Toe Screenshot")
+
 ### Process
 1. Players type their username - both have to type - 
 2. Player 1 clicks on game grid
