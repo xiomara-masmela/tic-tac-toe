@@ -163,6 +163,9 @@ p {
         flex-direction: column;
         padding: 30px 0;
     }
+    button {
+        margin-top: 0;
+    }
     
 }
 
@@ -223,9 +226,9 @@ p {
     color: rgb(54, 74, 86);
     font-size: 50px;
     font-weight: bold;
-    -webkit-transition: background-color 1s ease;
-    -o-transition: background-color 1s ease;
-    transition: background-color 1s ease;
+    -webkit-transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
     cursor: pointer;
 }
 
@@ -264,7 +267,7 @@ input {
     opacity: 0.8;
     border: 0;
     border-radius: 4px;
-    width: 40%;
+    width: 30%;
     padding: 20px 10px;
     margin-right: 20px;
     font-size: 16px;

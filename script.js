@@ -37,10 +37,24 @@ let currentPlayer = "";
 function newNames() {
     game.player01.player = document.getElementById('p1').value;
     game.player02.player = document.getElementById('p2').value;
+    // debugger;
     //console.log(game.player01.player ,game.player02.player );
-    currentPlayer = game.player01.player;
-    //Start the Game with Player 01
-    playerdiv.textContent = `Player: ${currentPlayer} starts`;
+    if(game.player01.player !== game.player02.player){
+        if(game.player01.player !== "" && game.player02.player !== "") {
+            currentPlayer = game.player01.player;
+            //Start the Game with Player 01
+            playerdiv.textContent = `Player: ${currentPlayer} starts`;
+        }else if(game.player01.player !== "" || game.player02.player !== "") {
+            alert("Pick a name");
+        }
+        
+    }else {
+        alert("Players can't have same name");
+        document.getElementById('p1').value = "";
+        document.getElementById('p2').value = "";
+    }
+    
+    
 
     startGame();
     return;
@@ -124,7 +138,7 @@ function resultValidation() {
     }
 
     if (roundWon) {
-        playerdiv.textContent = `Wiiner is: ${currentPlayer}`;
+        playerdiv.textContent = `Winer is: ${currentPlayer}`;
         if(currentPlayer === game.player01.player){
             playerdiv.classList.add('winner-P1');
         }
