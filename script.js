@@ -33,12 +33,13 @@ const game = {
 }
 
 let currentPlayer = "";
-//Manipulate the Game object
+
+
+//Add Names Based on input
 function newNames() {
     game.player01.player = document.getElementById('p1').value;
     game.player02.player = document.getElementById('p2').value;
     // debugger;
-    //console.log(game.player01.player ,game.player02.player );
     if(game.player01.player !== game.player02.player){
         if(game.player01.player !== "" && game.player02.player !== "") {
             currentPlayer = game.player01.player;
@@ -53,8 +54,6 @@ function newNames() {
         document.getElementById('p1').value = "";
         document.getElementById('p2').value = "";
     }
-    
-    
 
     startGame();
     return;
@@ -76,7 +75,6 @@ const resetButton = document.getElementById('reset');
 
 
 //Js Variables
-
 let gameActive = game.isActive;
 
 
@@ -87,6 +85,7 @@ function clickOnCell() {
     const clickedCellIndex = clickedCell.dataset.index;
     cellPlayed(clickedCell, clickedCellIndex);
     resultValidation();
+   
     clickedCell.removeEventListener('click', clickOnCell);
     return;
 }
@@ -98,8 +97,7 @@ function changePlayer() {
         currentPlayer = game.player01.player;
     }
     //console.log(currentPlayer);
-    playerdiv.textContent = `Current player ${currentPlayer}`;
-
+    playerdiv.textContent = `Current player: ${currentPlayer}`;
 }
 
 //3. Cell played: update internal gameState and updateUI
@@ -138,13 +136,15 @@ function resultValidation() {
     }
 
     if (roundWon) {
-        playerdiv.textContent = `Winer is: ${currentPlayer}`;
+        playerdiv.textContent = `Winner is: ${currentPlayer}`;
+
         if(currentPlayer === game.player01.player){
             playerdiv.classList.add('winner-P1');
         }
         if(currentPlayer === game.player02.player){
             playerdiv.classList.add('winner-P2');
         }
+        //End the Game after there is a winner reset button appears
         gameActive = false;
         resetButton.classList.add('visible');
         for (cell of cells) {

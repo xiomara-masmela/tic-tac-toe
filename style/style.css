@@ -7,12 +7,13 @@
 
 /*Import */
 @import "./reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;600&display=swap');
 /* General classes/ Elements  */
 
 body {
     background-color: #102532;
-    color: #a9b1b6;
-    font-family: 'Montserrat', sans-serif;
+    color: #c3c6c9;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container {
@@ -65,9 +66,9 @@ body {
 }
 
 button {
-    border: 1px solid #a9b1b6;
+    border: 1px solid #c3c6c9;
     background-color: transparent;
-    color: #a9b1b6;
+    color: #c3c6c9;
     border-radius: 32px;
     padding: 15px 26px;
     margin-top: 20px;
@@ -84,7 +85,7 @@ button {
 }
 
 button::after {
-    background-color: #a9b1b6;
+    background-color: #c3c6c9;
     color: #102532;
     border-radius: 3rem;
     content: '';
@@ -131,13 +132,13 @@ button:hover::after {
 
 h1 {
     font-size: 50px;
-    font-weight: 100;
+    font-weight: 200;
     margin-bottom: 20px;
 }
 
 h4 {
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 200;
     margin-bottom: 20px;
 }
 p {
@@ -224,8 +225,8 @@ p {
         -ms-flex-align: center;
             align-items: center;
     color: rgb(54, 74, 86);
-    font-size: 50px;
-    font-weight: bold;
+    font-size: 6rem;
+    font-weight: 600;
     -webkit-transition: background-color 0.5s ease;
     -o-transition: background-color 0.5s ease;
     transition: background-color 0.5s ease;
@@ -233,11 +234,11 @@ p {
 }
 
 .clickedP1 {
-    background-color: rgb(255, 121, 113);
+    background-color: rgba(255, 121, 113,0.9);
 }
 
 .clickedP2 {
-    background-color: rgb(132, 200, 203);
+    background-color: rgba(132, 200, 203,0.9);
 }
 
 .winner {
@@ -263,7 +264,7 @@ p {
 
 input {
     background-color: rgb(54, 74, 86);
-    color: #a9b1b6;
+    color: #c3c6c9;
     opacity: 0.8;
     border: 0;
     border-radius: 4px;
@@ -280,23 +281,23 @@ input {
 }
 
 input::-webkit-input-placeholder {
-    color: #a9b1b6;
+    color: #c3c6c9;
 }
 
 input::-moz-placeholder {
-    color: #a9b1b6;
+    color: #c3c6c9;
 }
 
 input:-ms-input-placeholder {
-    color: #a9b1b6;
+    color: #c3c6c9;
 }
 
 input::-ms-input-placeholder {
-    color: #a9b1b6;
+    color: #c3c6c9;
 }
 
 input::placeholder {
-    color: #a9b1b6;
+    color: #c3c6c9;
 }
 
 
@@ -310,14 +311,14 @@ input::placeholder {
 }
 
 .winner-P1 {
-    color: rgb(255, 121, 113);
+    color: rgba(255, 121, 113,0.9);
     font-size: 35px;
     text-transform: capitalize;
     font-weight: 900;
 }
 
 .winner-P2 {
-    color: rgb(132, 200, 203);
+    color: rgba(132, 200, 203, 0.9);
     font-size: 35px;
     text-transform: capitalize;
     font-weight: 900;
