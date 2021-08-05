@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <!--Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <main class="container">
@@ -17,16 +17,15 @@
         <section class="game-info">
             <h1>Let's play Tic Tac Toe</h1>
             <h4>Players</h4>
-            <p>Choose your Player name (max 3 characters)</p>
+            <p>Choose your Player name (max 2 characters)</p>
             <div class="players">
-                <input id="p1" type="text" placeholder="Player name 1" maxlength="3">
-                <input id="p2" type="text" placeholder="Player name 2" maxlength="3">
+                <input id="p1" type="text" placeholder="Player 1" maxlength="2">
+                <input id="p2" type="text" placeholder="Player 2" maxlength="2">
                 <button onclick="newNames()">Start Game</button>
             </div>
             
-                
-            </ul>
         </section>
+        <h4 class="d-none">Board</h4>
         <section id="board">
             <div data-index="0" class="cell"></div>
             <div data-index="1" class="cell"></div>
