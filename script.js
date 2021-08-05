@@ -124,7 +124,7 @@ function resultValidation() {
     }
 
     if (roundWon) {
-        playerdiv.textContent = `${currentPlayer} wins`;
+        playerdiv.textContent = `Wiiner is: ${currentPlayer}`;
         if(currentPlayer === game.player01.player){
             playerdiv.classList.add('winner-P1');
         }
@@ -133,6 +133,10 @@ function resultValidation() {
         }
         gameActive = false;
         resetButton.classList.add('visible');
+        for (cell of cells) {
+            cell.removeEventListener('click', clickOnCell);
+        }
+
         return;
     }
     //Draw

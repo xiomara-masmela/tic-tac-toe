@@ -16,12 +16,8 @@ body {
 }
 
 .container {
-    display: -ms-grid;
-    display: grid;
-        grid-template-areas:
-        "info game results"
-        "info game results"
-        "info game results";
+    display: flex;
+    flex-wrap: wrap;
     padding: 80px 60px;
     width: 1200px;
     margin: 0 auto;
@@ -31,10 +27,29 @@ body {
     .container {
         grid-template-areas: 
             "info info info"
-            "game game results"
+            "results results results"
+            "game game game"
         ;
+        width: 90%;
     }
 }
+@media only screen and (max-width: 1017px) and (min-width: 769px){
+    .container {
+        width: 80%!important;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) and (min-width: 480px){
+    .container {
+        width: 80%!important;
+    }
+  }
+  
+  @media only screen and (max-width: 480px){
+    .container {
+        width: 80%!important;
+    }
+  }
 
 
 .invisible {
@@ -147,9 +162,7 @@ p {
         justify-content: center;
         flex-direction: column;
     }
-    #board {
-        width: 60%;
-    }
+    
 }
 
 
@@ -164,12 +177,18 @@ p {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     width: 500px;
+    height: 424px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+}
+@media only screen and (max-width: 900px) {
+    #board {
+        width: 450px;
+    }
 }
 
 
@@ -187,8 +206,8 @@ p {
 
 .cell {
     background-color: rgb(54, 74, 86);
-    width: 160px;
-    height: 152px;
+    width: 30%;
+    height: 30%;
     margin-bottom: 20px;
     border-radius: 10px;
     display: -webkit-box;
