@@ -23,7 +23,7 @@ const game = {
             wins: 0,
             losses: 0,
         },
-        moves: []
+        moves: [],
     },
     player02: {
         player: "",
@@ -31,15 +31,29 @@ const game = {
             wins: 0,
             losses: 0,
         },
-        moves: []
+        moves: [],
+        
     },
     isActive: true,
     rounds: 0
 
 }
 
+//Game Variables
 let currentPlayer = "";
+let gameState = ["", "", "", "", "", "", "", "", ""];
 
+
+//DOM Variables
+const boardDiv = document.getElementById('game');
+const cells = document.getElementsByClassName('cell');
+const playerdiv = document.getElementById('player');
+const resetButton = document.getElementById('reset');
+
+
+
+//Js Variables
+let gameActive = game.isActive;
 
 //0.0 Add Names Based on input
 
@@ -67,21 +81,6 @@ function newNames() {
     startGame();
     return;
 }
-
-
-
-let gameState = ["", "", "", "", "", "", "", "", ""];
-
-
-//DOM Variables
-const boardDiv = document.getElementById('game');
-const cells = document.getElementsByClassName('cell');
-const playerdiv = document.getElementById('player');
-const resetButton = document.getElementById('reset');
-
-
-//Js Variables
-let gameActive = game.isActive;
 
 
 
@@ -134,7 +133,7 @@ function resultValidation() {
     for (move of winningMoves) {
         //move if each winning move
         //adds the username to the gameState on the specific index = to the cell clicked
-        console.log(gameState, "move0",move[0], "move1", move[1], "move2", move[2]);
+        //console.log(gameState, "move0",move[0], "move1", move[1], "move2", move[2]);
         //loops thought the moves and compare the State to the moves
         let a = gameState[move[0]];
         let b = gameState[move[1]];
@@ -153,10 +152,30 @@ function resultValidation() {
         playerdiv.textContent = `Winner is: ${currentPlayer}`;
         if(currentPlayer === game.player01.player){
             playerdiv.classList.add('winner-P1');
+            console.log(cells);
+            for(cell of cells){
+                if(currentPlayer === game.player01.player) {
+                    if(cell.classList.contains('clickedP1')){
+                        console.log(cell);
+                        cell.classList.add('winner');
+                    }
+                }
+                
+            }
         }
         if(currentPlayer === game.player02.player){
             playerdiv.classList.add('winner-P2');
+            for(cell of cells){
+                if(currentPlayer === game.player02.player) {
+                    if(cell.classList.contains('clickedP2')){
+                        console.log(cell);
+                        cell.classList.add('winner');
+                    }
+                }
+                
+            }
         }
+        
         //End the Game after there is a winner reset button appears
         gameActive = false;
         resetButton.classList.add('visible');

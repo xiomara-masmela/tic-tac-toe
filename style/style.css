@@ -245,7 +245,9 @@ p {
 }
 
 .winner {
-    background-color: red;
+    background-color: transparent;
+    color: #c3c6c9;
+    transition: background-color 0.5s ease-in, color 0.5s ease-in;
 }
 
 
