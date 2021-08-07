@@ -41,7 +41,8 @@ const game = {
 let currentPlayer = "";
 
 
-//Add Names Based on input
+//0.0 Add Names Based on input
+
 function newNames() {
     game.player01.player = document.getElementById('p1').value;
     game.player02.player = document.getElementById('p2').value;
@@ -138,7 +139,7 @@ function resultValidation() {
         let a = gameState[move[0]];
         let b = gameState[move[1]];
         let c = gameState[move[2]];
-        
+        //The continue statement breaks one iteration (in the loop) if a specified condition occurs, and continues with the next iteration in the loop.
         if (a === '' || b === '' || c === '') {
             continue;
         }
