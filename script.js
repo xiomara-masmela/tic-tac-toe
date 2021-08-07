@@ -19,12 +19,18 @@ const winningMoves = [
 const game = {
     player01: {
         player: "",
-        plays: 0,
+        plays: {
+            wins: 0,
+            losses: 0,
+        },
         moves: []
     },
     player02: {
         player: "",
-        plays: 0,
+        plays: {
+            wins: 0,
+            losses: 0,
+        },
         moves: []
     },
     isActive: true,
@@ -137,6 +143,7 @@ function resultValidation() {
 
     if (roundWon) {
         playerdiv.textContent = `Winner is: ${currentPlayer}`;
+
 
         if(currentPlayer === game.player01.player){
             playerdiv.classList.add('winner-P1');
