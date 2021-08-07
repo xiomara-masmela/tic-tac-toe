@@ -232,7 +232,7 @@ p {
     transition: background-color 0.5s ease;
     cursor: pointer;
 }
-.cell:hover {
+.cell:hover:not(.clickedP1,.clickedP2) {
     background-color: rgb(136 155 167 / 50%);
 }
 
