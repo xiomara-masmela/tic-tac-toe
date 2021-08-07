@@ -1,6 +1,8 @@
 # JavaScript Project 
 ## Tic Tac Toe
 
+My first apporach where I planned, executed and tested an application.
+
 The project uses HTML, CSS and JavaScript.
 
 ![Tic Tac Toe screenshot](./screenshot.png "Tic Tac Toe Screenshot")
@@ -23,3 +25,7 @@ There might be a button to "Play Again"
 
 1. Fork Repo instructions [here](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 
+### Future Functionality
+
+1. Allow users to pick their own colour
+2. Store scores and allow for multiple rounds and show a final winner.
