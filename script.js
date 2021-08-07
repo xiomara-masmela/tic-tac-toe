@@ -15,7 +15,7 @@ const winningMoves = [
     [6, 7, 8]
 ];
 
-
+//Game object
 const game = {
     player01: {
         player: "",
@@ -46,12 +46,14 @@ function newNames() {
     game.player01.player = document.getElementById('p1').value;
     game.player02.player = document.getElementById('p2').value;
     // debugger;
+    //do not accept empty values or same value on both input fields
     if(game.player01.player !== game.player02.player){
         if(game.player01.player !== "" && game.player02.player !== "") {
             currentPlayer = game.player01.player;
             //Start the Game with Player 01
             playerdiv.textContent = `Player: ${currentPlayer} starts`;
         }else if(game.player01.player !== "" || game.player02.player !== "") {
+            //if either of the input fields is empty
             alert("Pick a name");
         }
         
@@ -75,9 +77,6 @@ const boardDiv = document.getElementById('game');
 const cells = document.getElementsByClassName('cell');
 const playerdiv = document.getElementById('player');
 const resetButton = document.getElementById('reset');
-
-
-
 
 
 //Js Variables
@@ -106,14 +105,17 @@ function changePlayer() {
     playerdiv.textContent = `Current player: ${currentPlayer}`;
 }
 
-//3. Cell played: update internal gameState and updateUI
+//3. Cell played: update gameState and updateUI
 function cellPlayed(clickedCell, clickedCellIndex) {
+    //Add username to the gameState array[cellindex]
     gameState[clickedCellIndex] = currentPlayer;
+    //Display the username on the clicked cell
     const cellContent = document.createElement('p');
     cellContent.classList.add('move');
     cellContent.textContent = currentPlayer;
     clickedCell.append(cellContent);
     
+    //Add classes - styling- depending of P1 or P2
     if(currentPlayer === game.player01.player){
         clickedCell.classList.add('clickedP1');
     }
@@ -124,14 +126,19 @@ function cellPlayed(clickedCell, clickedCellIndex) {
 
 //4. resultsValidation - winner or draw
 function resultValidation() {
+    //Starts with no winners
     let roundWon = false;
     let rounds = game.rounds;
     //Winner
     for (move of winningMoves) {
+        //move if each winning move
+        //adds the username to the gameState on the specific index = to the cell clicked
+        console.log(gameState, "move0",move[0], "move1", move[1], "move2", move[2]);
+        //loops thought the moves and compare the State to the moves
         let a = gameState[move[0]];
         let b = gameState[move[1]];
         let c = gameState[move[2]];
-        //console.log("a"+a,"b"+ b,"c"+ c)
+        
         if (a === '' || b === '' || c === '') {
             continue;
         }
@@ -143,8 +150,6 @@ function resultValidation() {
 
     if (roundWon) {
         playerdiv.textContent = `Winner is: ${currentPlayer}`;
-
-
         if(currentPlayer === game.player01.player){
             playerdiv.classList.add('winner-P1');
         }
@@ -202,6 +207,7 @@ function resetGame() {
 }
 
 //Event listeners
+// * Start the Game
 function startGame() {
     for (cell of cells) {
         cell.addEventListener('click', clickOnCell);
@@ -209,5 +215,5 @@ function startGame() {
 }
 
 
-
+//Reset Game
 resetButton.addEventListener('click', resetGame);
