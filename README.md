@@ -19,13 +19,28 @@ The project uses HTML, CSS and JavaScript.
 
 7. If neither of the players's moves correspond to any of the winning moves, there is a draw
 The result of the game is displayed on the Results area
-There might be a button to "Play Again"
+There might be a button to "Play Again".
 
-### Installation instructions
+### RoadBlocks
 
-1. Fork Repo instructions [here](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
+1. Working with objects and DOM
+2. Optimize Grid for mobile
+3. Naming Variables
+
+### Enjoyed
+
+1. Working with objects and DOM
+2. Adding the personalization for each player on the board and styling the board.
+3. The process of Planning, executing and testing the app was very fun.
 
 ### Future Functionality
 
 1. Allow users to pick their own colour
 2. Store scores and allow for multiple rounds and show a final winner.
+
+
+
+### Installation instructions
+
+1. Fork Repo instructions [here](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
+
