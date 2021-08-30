@@ -15,31 +15,37 @@ const winningMoves = [
 
 //Game object
 const game = {
-    player01: {
-        player: "",
-        plays: {
-            wins: 0,
-            losses: 0,
+    players: {
+        player01: {
+            username: "",
+            plays: {
+                wins: 0,
+                losses: 0,
+            },
+            moves: [],
         },
-        moves: [],
-    },
-    player02: {
-        player: "",
-        plays: {
-            wins: 0,
-            losses: 0,
+        player02: {
+            username: "",
+            plays: {
+                wins: 0,
+                losses: 0,
+            },
+            moves: [],
+            
         },
-        moves: [],
-        
+
     },
+
+    
     isActive: true,
-    rounds: 0
+    rounds: 0,
+    state : ["", "", "", "", "", "", "", "", ""]
 
 }
 
 //Game Variables
 let currentPlayer = "";
-let gameState = ["", "", "", "", "", "", "", "", ""];
+const gameState = game.state;
 
 
 //DOM Variables
@@ -56,16 +62,16 @@ let gameActive = game.isActive;
 //0.0 Add Names Based on input
 
 function newNames() {
-    game.player01.player = document.getElementById('p1').value;
-    game.player02.player = document.getElementById('p2').value;
+    game.players.player01.username = document.getElementById('p1').value;
+    game.players.player02.username = document.getElementById('p2').value;
     // debugger;
     //do not accept empty values or same value on both input fields
-    if(game.player01.player !== game.player02.player){
-        if(game.player01.player !== "" && game.player02.player !== "") {
-            currentPlayer = game.player01.player;
+    if(game.players.player01.username !== game.players.player02.username ){
+        if(game.players.player01.username  !== "" && game.players.player02.username  !== "") {
+            currentPlayer = game.players.player01.username ;
             //Start the Game with Player 01
             playerdiv.textContent = `Player: ${currentPlayer} starts`;
-        }else if(game.player01.player !== "" || game.player02.player !== "") {
+        }else if(game.players.player01.username  !== "" || game.players.player02.username  !== "") {
             //if either of the input fields is empty
             alert("Pick a name");
         }
@@ -94,10 +100,10 @@ function clickOnCell() {
 }
 //2. Change the current player
 function changePlayer() {
-    if (currentPlayer === game.player01.player) {
-        currentPlayer = game.player02.player;
+    if (currentPlayer === game.players.player01.username) {
+        currentPlayer = game.players.player02.username;
     } else {
-        currentPlayer = game.player01.player;
+        currentPlayer = game.players.player01.username;
     }
     //console.log(currentPlayer);
     playerdiv.textContent = `Current player: ${currentPlayer}`;
@@ -114,10 +120,10 @@ function cellPlayed(clickedCell, clickedCellIndex) {
     clickedCell.append(cellContent);
     
     //Add classes - styling- depending of P1 or P2
-    if(currentPlayer === game.player01.player){
+    if(currentPlayer === game.players.player01.username){
         clickedCell.classList.add('clickedP1');
     }
-    if(currentPlayer === game.player02.player) {
+    if(currentPlayer === game.players.player02.username) {
         clickedCell.classList.add('clickedP2');
     }
 }
@@ -148,11 +154,11 @@ function resultValidation() {
 
     if (roundWon) {
         playerdiv.textContent = `Winner is: ${currentPlayer}`;
-        if(currentPlayer === game.player01.player){
+        if(currentPlayer === game.players.player01.username){
             playerdiv.classList.add('winnerP1');
             console.log(cells);
             for(cell of cells){
-                if(currentPlayer === game.player01.player) {
+                if(currentPlayer === game.players.player01.username) {
                     if(cell.classList.contains('clickedP1')){
                         console.log(cell);
                         cell.classList.add('winner');
@@ -161,10 +167,10 @@ function resultValidation() {
                 
             }
         }
-        if(currentPlayer === game.player02.player){
+        if(currentPlayer === game.players.player02.username){
             playerdiv.classList.add('winnerP2');
             for(cell of cells){
-                if(currentPlayer === game.player02.player) {
+                if(currentPlayer === game.players.player02.username) {
                     if(cell.classList.contains('clickedP2')){
                         console.log(cell);
                         cell.classList.add('winner');
@@ -199,7 +205,7 @@ function resultValidation() {
 //5. Reset Game
 function resetGame() {
     //Variables back to initial state
-    currentPlayer = game.player01.player;
+    currentPlayer = game.players.player01.username;
     gameActive = game.isActive;
     gameState = ["", "", "", "", "", "", "", "", ""];
     playerdiv.textContent = "";

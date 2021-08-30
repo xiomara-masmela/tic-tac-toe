@@ -4,7 +4,7 @@ for other properties please check style.css
 */
 
 body {
-    background-color: #c3c6c9;
+    background-color: #eaebeb;
     color: #55656f;
 }
 
@@ -16,12 +16,12 @@ button {
 
 button::after {
     background-color: #55656f;
-    color: #c3c6c9;
+    color: #eaebeb;
 }
 
 button:hover {
     border: 2px solid transparent;
-    color: #c3c6c9;
+    color: #eaebeb;
 }
 
 .cell {
@@ -50,30 +50,30 @@ button:hover {
 
 input {
     background-color: #55656f;
-    color: #c3c6c9;
+    color: #eaebeb;
     opacity: 0.8;
 
 }
 
 
 input::-webkit-input-placeholder {
-    color: #c3c6c9;
+    color: #eaebeb;
 }
 
 input::-moz-placeholder {
-    color: #c3c6c9;
+    color: #eaebeb;
 }
 
 input:-ms-input-placeholder {
-    color: #c3c6c9;
+    color: #eaebeb;
 }
 
 input::-ms-input-placeholder {
-    color: #c3c6c9;
+    color: #eaebeb;
 }
 
 input::placeholder {
-    color: #c3c6c9;
+    color: #eaebeb;
 }
 
 
