@@ -6,19 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/light-theme.css" id="theme-link">
     
 </head>
-<body>
-    <main class="container">
-        
+<body class="container">
+    <header>
+        <h1>Let's play Tic Tac Toe</h1>
+    </header>
+    <main class="content">
+            <button id="changeTheme">Dark theme</button>
         <section class="game-info">
-            <h1>Let's play Tic Tac Toe</h1>
+           
             <h4>Players</h4>
             <p>Choose your Player name (max 2 characters)</p>
             <div class="players">
                 <input id="p1" type="text" placeholder="Player 1" maxlength="2">
                 <input id="p2" type="text" placeholder="Player 2" maxlength="2">
-                <button onclick="newNames()">Start Game</button>
+                <button id="startGame" onclick="newNames()">Start Game</button>
             </div>
             
         </section>

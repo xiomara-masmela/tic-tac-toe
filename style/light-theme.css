@@ -1,0 +1,88 @@
+/* 
+This file only changes colour properties, 
+for other properties please check style.css 
+*/
+
+body {
+    background-color: #c3c6c9;
+    color: #55656f;
+}
+
+button {
+    border: 1px solid #55656f;
+    background-color: transparent;
+    color: #55656f;
+}
+
+button::after {
+    background-color: #55656f;
+    color: #c3c6c9;
+}
+
+button:hover {
+    border: 2px solid transparent;
+    color: #c3c6c9;
+}
+
+.cell {
+    background-color: #55656f;
+    color: #55656f;
+}
+.cell:hover:not(.clickedP1,.clickedP2) {
+    background-color: rgb(136 155 167 / 50%);
+}
+
+.clickedP1 {
+    background-color: rgba(255, 121, 113,0.5);
+}
+
+.clickedP2 {
+    background-color: rgba(132, 200, 203,0.5);
+}
+
+/* .winner {
+    background-color: #55656f;
+    color: transparent;
+    transition: background-color 0.5s ease-in, color 0.5s ease-in;
+} */
+
+
+
+input {
+    background-color: #55656f;
+    color: #c3c6c9;
+    opacity: 0.8;
+
+}
+
+
+input::-webkit-input-placeholder {
+    color: #c3c6c9;
+}
+
+input::-moz-placeholder {
+    color: #c3c6c9;
+}
+
+input:-ms-input-placeholder {
+    color: #c3c6c9;
+}
+
+input::-ms-input-placeholder {
+    color: #c3c6c9;
+}
+
+input::placeholder {
+    color: #c3c6c9;
+}
+
+
+.winnerP1 {
+    color: rgba(255, 121, 113,0.5);
+
+}
+
+.winnerP2 {
+    color: rgba(132, 200, 203, 0.5);
+    
+}

@@ -1,8 +1,6 @@
-// const board = [
-//     [0, 1, 2],
-//     [3, 4, 5],
-//     [6, 7, 8]
-// ];
+
+  
+//Game Logic from https://dev.to/bornasepic/pure-and-simple-tic-tac-toe-with-javascript-4pgn
 
 const winningMoves = [
     [0, 1, 2],
@@ -151,7 +149,7 @@ function resultValidation() {
     if (roundWon) {
         playerdiv.textContent = `Winner is: ${currentPlayer}`;
         if(currentPlayer === game.player01.player){
-            playerdiv.classList.add('winner-P1');
+            playerdiv.classList.add('winnerP1');
             console.log(cells);
             for(cell of cells){
                 if(currentPlayer === game.player01.player) {
@@ -164,7 +162,7 @@ function resultValidation() {
             }
         }
         if(currentPlayer === game.player02.player){
-            playerdiv.classList.add('winner-P2');
+            playerdiv.classList.add('winnerP2');
             for(cell of cells){
                 if(currentPlayer === game.player02.player) {
                     if(cell.classList.contains('clickedP2')){
@@ -237,3 +235,22 @@ function startGame() {
 
 //Reset Game
 resetButton.addEventListener('click', resetGame);
+
+
+
+
+//Change theme
+//From https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#using-separate-stylesheets
+
+const changeThemeButton = document.getElementById('changeTheme');
+const theme = document.getElementById("theme-link");
+
+changeThemeButton.addEventListener('click', function() {
+    if (theme.getAttribute("href") == "./style/dark-theme.css") {
+        theme.href = "./style/light-theme.css";
+        changeThemeButton.innerText = "Dark Theme"
+    } else {
+        theme.href = "./style/dark-theme.css"
+        changeThemeButton.innerText = "Light Theme"
+    }
+})
